@@ -15,7 +15,7 @@ watch(search, () => {
 </script>
 
 <template>
-  <div>
+  <div id="container">
     <header>
       <h1>Quizes</h1>
       <input v-model.trim="search" type="text" placeholder="search..." />
@@ -27,14 +27,16 @@ watch(search, () => {
 </template>
 
 <style scoped>
-.quizes-container {
+#container {
   display: flex;
-  height: 70vh;
-  justify-content: space-around;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
 }
-
 header {
   display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
   width: 100%;
@@ -42,14 +44,43 @@ header {
 
 header h1 {
   font-size: 5rem;
+  width: 100%;
+  text-align: center;
 }
 
 header input {
-  margin-left: 30px;
   background-color: rgba(206, 206, 206, 0.45);
   border: none;
   border-radius: 5px;
   height: 30px;
   margin-top: 5px;
+}
+.quizes-container {
+  height: 70vh;
+  display: flex;
+  justify-content: space-around;
+}
+@media (max-width: 1024px) {
+  #container {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+    padding-bottom: 20px;
+  }
+  header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+  }
+  .quizes-container {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    gap: 20px;
+    height: max-content;
+  }
 }
 </style>

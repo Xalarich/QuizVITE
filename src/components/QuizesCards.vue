@@ -36,4 +36,9 @@ const navigateToQuiz = () => {
 .card-container {
   width: 30%;
 }
+@media (max-width: 1024px) {
+  .card-container {
+    width: 80%;
+  }
+}
 </style>
